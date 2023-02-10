@@ -4,6 +4,10 @@ from rest_framework.response import Response
 
 from rest_framework.decorators import action
 
+from drf_yasg import openapi
+from drf_yasg.utils import swagger_auto_schema
+
+
 from applications.articles.models import Article, Category
 from applications.articles.api.serializers import ArticleSerializer
 
@@ -16,8 +20,22 @@ class ArticleView(viewsets.ModelViewSet):
     serializer_class = ArticleSerializer
     queryset = ArticleSerializer.Meta.model.objects.all()
 
+    @swagger_auto_schema(
+        operation_description="""
+        Filter all articles according to their category and true status.
+        Return all articles except - (article_category_id).
+        """,
+        manual_parameters=[openapi.Parameter(
+            name="category",
+            type=openapi.TYPE_STRING,
+            description="The name of an article within the paginated result set",
+            required=True,
+            in_=openapi.IN_QUERY
+        )],
+        responses={200: "Success"}
+    )
     # Create a custom viewset
-    @action(detail=False, methods=['get'], url_path='article-by')
+    @ action(detail=False, methods=['get'], url_path='article-by')
     def article_by_category(self, request, pk=None):
 
         # get data from url parameter
@@ -51,6 +69,10 @@ class ArticleView(viewsets.ModelViewSet):
         return Response({'mensaje': 'No se ha encontrado los articulos.'}, status=status.HTTP_400_BAD_REQUEST)
 
     def list(self, request, *args, **kwargs):
+        """
+        List all articles that have their true state.
+        Return all articles except - (article_category_id)
+        """
         queryset = Article.objects.filter(status=True)
 
         page = self.paginate_queryset(queryset)

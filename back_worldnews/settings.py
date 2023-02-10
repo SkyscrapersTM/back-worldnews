@@ -19,20 +19,27 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # BASE APPS
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+    # THIRD APPS
     'import_export',
     'rest_framework',
     'ckeditor',
     'corsheaders',
-
+    'drf_yasg',
+    # LOCAL APPS
     'applications.articles',
 ]
+
+
+SWAGGER_SETTINGS = {
+    'DOC_EXPANSION': 'none'
+}
 
 MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",
