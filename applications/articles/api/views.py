@@ -33,10 +33,18 @@ class ArticleView(viewsets.ModelViewSet):
         # check if an order instance exists
         if article:
 
-            # convert a Order object to a JSON format
+            # set paginate to article
+            page = self.paginate_queryset(article)
+
+            # check if poage exist
+            if page is not None:
+                serializer = ArticleSerializer(page, many=True)
+                return self.get_paginated_response(serializer.data)
+
+            # convert a article object to a JSON format
             serializer = ArticleSerializer(article, many=True)
 
-            # display orders data for the response
+            # display article data for the response
             return Response(serializer.data, status=status.HTTP_200_OK)
 
         # display status 400 for the response

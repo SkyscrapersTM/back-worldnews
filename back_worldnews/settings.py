@@ -108,7 +108,7 @@ REST_FRAMEWORK = {
     #     'rest_framework.permissions.IsAuthenticated',
     # ],
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
-    'PAGE_SIZE': 5
+    'PAGE_SIZE': 6
 }
 
 # CkEditor Settings
@@ -133,8 +133,9 @@ USE_I18N = True
 USE_TZ = True
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:8080",
-    "http://127.0.0.1:5500",
+    "http://localhost:3000",
+    "http://localhost:5173",
+    "http://192.168.1.4:3000",
 ]
 
 # Static files (CSS, JavaScript, Images)
