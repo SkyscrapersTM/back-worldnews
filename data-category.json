@@ -1,0 +1,26 @@
+[
+    {
+        "id": 6,
+        "name": "business"
+    },
+    {
+        "id": 5,
+        "name": "health"
+    },
+    {
+        "id": 4,
+        "name": "sports"
+    },
+    {
+        "id": 3,
+        "name": "technology"
+    },
+    {
+        "id": 2,
+        "name": "science"
+    },
+    {
+        "id": 1,
+        "name": "entertainment"
+    }
+]
