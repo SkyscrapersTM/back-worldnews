@@ -51,4 +51,15 @@ You need to have Git and Python installed.
     # Run the server ✅
     py manage.py runserver
 
+Go  to _locahost:port/admin_ and import _data-category.json_, _data-article.json_
+
+[![admin.jpg](https://i.postimg.cc/zXyTWdLy/admin.jpg)](https://postimg.cc/GH1BnxxR)
+
+ENDPOINTS:
+
+[![endpoints.png](https://i.postimg.cc/mkD5f0bY/endpoints.png)](https://postimg.cc/ZBGc6svn)
+
+## License 
+
+This project is under license from MIT. For more details, see the [LICENSE](LICENSE.md) file.
 
