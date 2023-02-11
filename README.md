@@ -35,8 +35,7 @@ You need to have Git and Python installed.
     # Set your CORS ✅
     CORS_ALLOWED_ORIGINS = [
         "http://localhost:3000",
-        "http://localhost:5173",
-        "http://192.168.1.4:3000",
+        "http://localhost:5173"
     ]
 
     # Create migrations files ✅
